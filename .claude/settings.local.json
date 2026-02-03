@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(pip install:*)",
+      "Bash(python:*)",
+      "Bash(git init:*)",
+      "Bash(git branch:*)",
+      "Bash(gh auth:*)",
+      "Bash(where:*)",
+      "Bash(cmd.exe /c \"where gh\")",
+      "Bash(git config:*)",
+      "Bash(ssh:*)",
+      "Bash(winget list:*)",
+      "Bash(winget install:*)",
+      "Bash(git remote add:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nInitial commit: any.holdings website\n\nStatic site for Armitage & York Holdings LLC with homepage,\nprivacy policy, and terms of service. Includes GitHub Pages\ndeployment workflow.\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "Bash(export PATH=\"$PATH:/c/Program Files/GitHub CLI\")",
+      "Bash(gh --version:*)",
+      "Bash(gh api:*)",
+      "Bash(gh workflow run:*)",
+      "Bash(gh run list --repo aconte1975/anyholdings --limit 3)",
+      "WebFetch(domain:any.holdings)",
+      "Bash(git commit:*)",
+      "Bash(git checkout:*)"
+    ]
+  }
+}
