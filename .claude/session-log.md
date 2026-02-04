@@ -72,3 +72,59 @@ Organization details were sourced from documents in `C:\Users\acont\OneDrive\Doc
 - GitHub Actions deployment
 - SSH auth to GitHub (`git@github.com:aconte1975`)
 - `gh` CLI installed via winget during session
+
+---
+
+## Session: February 4, 2026 - Exactio Labs & Infrastructure Reorganization
+
+### Context
+
+Created Exactio Labs page as the technology operations DBA for the parent LLC. Exactio Labs provides shared infrastructure (GitHub, Cloudflare, dev resources) to portfolio companies. Also reorganized repo ownership and domain hosting.
+
+### What Was Done
+
+#### 1. Created Exactio Labs pages
+- `exactio.html` - Full landing page with hero, about, services (6 cards), portfolio (DocSort AI + PlanReviews AI), contact
+- `exactio-privacy.html` - Privacy policy branded for Exactio Labs
+- `exactio-terms.html` - Terms of service branded for Exactio Labs
+- Added Exactio-specific styles to `style.css` (cyan/sky-blue accent color, distinct hero gradient)
+
+#### 2. Updated any.holdings main page
+- Removed individual portfolio company cards (DocSort AI, PlanReviews AI)
+- Replaced with "Operations" section linking to exactio.ai
+- Added Exactio Labs link to footer
+
+#### 3. Repository transfers
+- Transferred repos from `aconte1975` to `anyholdings` GitHub account:
+  - `anyholdings/anyholdings` (was `aconte1975/anyholdings`)
+  - `anyholdings/docsort`
+  - `anyholdings/planreviews`
+- Updated local git remote to `git@github.com:anyholdings/anyholdings.git`
+- Added GitHub Pro to `anyholdings` account (required for private repo Pages)
+
+#### 4. Domain/hosting configuration
+| Domain | Hosting | Repo/Service |
+|--------|---------|--------------|
+| any.holdings | GitHub Pages | `anyholdings/anyholdings` |
+| docsort.ai | GitHub Pages | `anyholdings/docsort` |
+| planreviews.ai | Vercel | `anyholdings/planreviews` |
+| exactio.ai | Cloudflare redirect | → `any.holdings/exactio.html` |
+
+#### 5. Cloudflare redirect setup for exactio.ai
+- DNS: A record `@` → `192.0.2.1` (proxied), CNAME `www` → `exactio.ai` (proxied)
+- Redirect rule: All incoming requests → `https://any.holdings/exactio.html` (301)
+
+### Exactio Labs Services (as listed on page)
+- Cloud Infrastructure (Cloudflare, cloud providers)
+- Development Tooling (GitHub org, CI/CD, code review)
+- Security & Compliance (policies, access management, scanning)
+- DevOps & Automation (deployment, IaC, monitoring)
+- Platform Services (SaaS subscriptions, AI/ML access, APIs)
+- Domain & DNS (registration, SSL, email infrastructure)
+
+### Design Notes
+- Exactio Labs uses distinct-but-related branding:
+  - Primary accent: `#0ea5e9` (sky blue) vs main site's `#0d9488` (teal)
+  - Gradient: sky-blue → indigo
+  - Hero: deeper navy-to-blue gradient
+  - Same typography (Inter), layout patterns, warm backgrounds
