@@ -348,6 +348,14 @@ nav {
     white-space: nowrap;
 }
 
+.card-tag-domain {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text-light);
+}
+
 .portfolio-link {
     display: inline-flex;
     align-items: center;
@@ -525,6 +533,150 @@ footer {
     color: var(--color-teal);
 }
 
+/* Exactio Labs page */
+.exactio-page {
+    --color-exactio: #0ea5e9;
+    --color-exactio-light: #38bdf8;
+    --color-exactio-dark: #0284c7;
+    --gradient-exactio: linear-gradient(135deg, #0ea5e9, #6366f1);
+    --gradient-exactio-hero: linear-gradient(160deg, #0f172a 0%, #1e293b 50%, #172554 100%);
+}
+
+.exactio-hero {
+    background: var(--gradient-exactio-hero);
+}
+
+.exactio-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at 30% 50%, rgba(14, 165, 233, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 40%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+                radial-gradient(ellipse at 50% 80%, rgba(56, 189, 248, 0.04) 0%, transparent 40%);
+    pointer-events: none;
+}
+
+.exactio-hero .hero-badge {
+    background: rgba(14, 165, 233, 0.1);
+    border-color: rgba(14, 165, 233, 0.2);
+    color: var(--color-exactio-light);
+}
+
+.exactio-hero .hero-divider {
+    background: var(--gradient-exactio);
+}
+
+.exactio-label {
+    color: var(--color-exactio);
+}
+
+.exactio-stat .stat-value {
+    background: var(--gradient-exactio);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Services */
+#services {
+    background: var(--color-warm-bg);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.service-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border-warm);
+    border-radius: 16px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-exactio);
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+
+.service-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.08);
+}
+
+.service-card:hover::before {
+    opacity: 1;
+}
+
+.service-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+    background: rgba(14, 165, 233, 0.08);
+    color: var(--color-exactio);
+}
+
+.service-card h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.65rem;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+}
+
+.service-card p {
+    font-size: 0.92rem;
+    color: var(--color-text-secondary);
+    line-height: 1.75;
+    margin: 0;
+}
+
+.exactio-page .contact-card a {
+    color: var(--color-exactio);
+}
+
+.exactio-page .legal a {
+    color: var(--color-exactio);
+}
+
+.exactio-card::before {
+    background: var(--gradient-exactio) !important;
+}
+
+.exactio-icon-teal {
+    background: rgba(14, 165, 233, 0.08);
+    color: var(--color-exactio);
+}
+
+.exactio-icon-indigo {
+    background: rgba(99, 102, 241, 0.08);
+    color: var(--color-indigo);
+}
+
+.exactio-link {
+    color: var(--color-exactio);
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     nav {
@@ -576,6 +728,10 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .contact-grid {
         grid-template-columns: 1fr;
     }
@@ -596,6 +752,10 @@ footer {
     }
 
     .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-grid {
         grid-template-columns: 1fr;
     }
 }
