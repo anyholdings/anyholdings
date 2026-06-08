@@ -24,7 +24,14 @@
       "Bash(gh run list --repo aconte1975/anyholdings --limit 3)",
       "WebFetch(domain:any.holdings)",
       "Bash(git commit:*)",
-      "Bash(git checkout:*)"
+      "Bash(git checkout:*)",
+      "WebFetch(domain:claude.ai)",
+      "Bash(gh repo view:*)",
+      "Bash(gh repo list:*)",
+      "Bash(1 <<'EOF'\n{\"cname\":\"docsort.ai\",\"source\":{\"branch\":\"main\",\"path\":\"/docs\"}}\nEOF)",
+      "Bash(1 <<'EOF'\n{\"source\":{\"branch\":\"main\",\"path\":\"/docs\"}}\nEOF)",
+      "Bash(git remote set-url:*)",
+      "Bash(git fetch:*)"
     ]
   }
 }
